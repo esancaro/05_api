@@ -17,7 +17,7 @@ module.exports.list = (req, res, next) => {
     res.status(200).json(employees.filter(x => x.privileges === "user"));
   } else if("badges" in req.query) {
     // Devolverá listado de employees que incluya "black" en el atributo "badges"
-    res.status(200).json(employees.filter(x => x.badges.indexOf(req.query.badges) > -1));
+    res.status(200).json(employees.filter(x => x?.badges?.indexOf(req.query.badges) > -1));
   }
 }
 
